@@ -21,6 +21,7 @@
   <xsl:import href="abbrev-d.xsl"/>
   <xsl:import href="markup-d.xsl"/>
   <xsl:import href="xml-d.xsl"/>
+  <xsl:import href="svg-d.xsl"/>
   
   <xsl:import href="nav.xsl"/>
   
