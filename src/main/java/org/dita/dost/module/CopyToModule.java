@@ -203,6 +203,10 @@ public final class CopyToModule extends AbstractPipelineModuleImpl {
             return;
         }
         final File path2project = getPathtoProject(copytoTargetFilename, target, inputMapInTemp, job);
+
+logger.info("2402 TROUBLESHOOTING: getPathtoProject = " + path2project );
+
+
         final File path2rootmap = getPathtoRootmap(target, inputMapInTemp);
         XMLFilter filter = new CopyToFilter(workdir, path2project, path2rootmap, src, target);
 
@@ -313,6 +317,7 @@ public final class CopyToModule extends AbstractPipelineModuleImpl {
         }
 
     }
+     /** Dates from 1ab0ed2 2016/01/26 **/
 
     /**
      * Get path to base directory

@@ -95,6 +95,9 @@ public final class DitaWriterFilter extends AbstractXMLFilter {
                 toFile(currentFile),
                 toFile(job.getInputFile()),
                 job);
+
+logger.info("2402 TROUBLESHOOTING: DebugAndFilterModule.getPathtoProject = " + path2Project );
+
         final File path2rootmap = toFile(getRelativePath(currentFile, job.getInputFile())).getParentFile();
         getContentHandler().startDocument();
         if (!OS_NAME.toLowerCase().contains(OS_NAME_WINDOWS)) {

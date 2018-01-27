@@ -515,6 +515,7 @@ public final class DebugAndFilterModule extends SourceReaderModule {
      * @param inputMap absolute path to start file
      * @return path to base directory, {@code null} if not available
      */
+     /** Dates from c724abe 2014/10/19 **/
     public static File getPathtoProject(final File filename, final File traceFilename, final File inputMap, final Job job) {
         if (job.getGeneratecopyouter() != Job.Generate.OLDSOLUTION) {
             if (isOutFile(traceFilename, inputMap)) {
