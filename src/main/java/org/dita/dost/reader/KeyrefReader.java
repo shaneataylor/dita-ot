@@ -329,6 +329,13 @@ public final class KeyrefReader implements AbstractReader {
   }
 
   private KeyDef resolveIntermediate(final KeyScope scope, final KeyDef keyDef, final List<KeyDef> circularityTracker) {
+    //OXYGEN PATCH START
+    //Prefer to use the key scope for the key definition when resolving the keyref.
+    String keyref = elem.attribute(ATTRIBUTE_NAME_KEYREF);
+    String prefix = findCloserKeyscopePrefix(scope, keyDef, keyrefToDefinition);
+    if(prefix != null && keyref != null && ! keyref.isEmpty() && scope.keyDefinition().containsKey(prefix + keyref)) {
+      keyref = prefix + keyref;
+    }
     final XdmNode elem = keyDef.element;
     final String keyref = elem.attribute(ATTRIBUTE_NAME_KEYREF);
     if (keyref != null && !keyref.trim().isEmpty() && scope.keyDefinition().containsKey(keyref)) {
