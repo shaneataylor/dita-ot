@@ -77,9 +77,29 @@ publication-ref =
 param =
   ## Publication parameter
   element param {
-    attribute name { text },
+    attribute name { param-name-other },
     (attribute href { xsd:anyURI }
      | attribute path { xsd:anyURI }
      | attribute value { text })
   }
+  | element param { attribute name { param-names-href },        attribute href { xsd:anyURI } }
+  | element param { attribute name { param-names-path },        attribute path { xsd:anyURI } }
+  | element param { attribute name { param-names-value },       attribute value { text } }
+  | element param { attribute name { param-names-yes-no },      attribute value { "yes" | "no" } }
+  | element param { attribute name { param-names-true-false },  attribute value { "true" | "false" } }
+  | param-defs-enumerated
+
+param-name-other = xsd:NCName -( param-names-href | param-names-path | param-names-value | param-names-yes-no
+                                  | param-names-true-false | param-names-enumerated | param-names-excluded )
+param-names-href = empty
+param-names-path = empty
+param-names-value = empty
+param-names-yes-no = empty
+param-names-true-false = empty
+param-defs-enumerated = empty
+param-names-enumerated = empty
+param-names-excluded = empty
+
+include "project-params.rnc"
+
 start = project

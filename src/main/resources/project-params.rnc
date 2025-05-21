@@ -1,0 +1,96 @@
+default namespace = "https://www.dita-ot.org/project"
+
+param-names-path |=
+  ## List of DITA-OT parameters requiring the path attribute
+  "args.input.dir"
+  | "dita.dir"
+  | "dita.temp.dir"
+  | "args.resources"
+  ## TODO verify args.resources can be used as a parameter and is a path
+  
+param-names-value |=
+  ## List of DITA-OT parameters requiring a string value attribute
+  "args.output.base"
+  | "default.language"
+  | "root-chunk-override"
+  | "result.rewrite-rule.class"
+  | "result.rewrite-rule.xsl"
+  
+param-names-yes-no |= 
+  ## List of DITA-OT parameters requiring a yes or no value
+  "args.debug"
+  | "args.draft"
+  | "args.gen.task.lbl"
+  | "args.grammar.cache"
+  | "clean.temp"
+  
+param-names-true-false |=
+  ## List of DITA-OT parameters requiring a true or false value
+  "build-step.branch-filter"
+  | "build-step.chunk"
+  | "build-step.clean-preprocess"
+  | "build-step.clean-temp"
+  | "build-step.coderef"
+  | "build-step.conref"
+  | "build-step.copy-flag"
+  | "build-step.copy-html"
+  | "build-step.copy-image"
+  | "build-step.keyref"
+  | "build-step.map-profile"
+  | "build-step.maplink"
+  | "build-step.mapref"
+  | "build-step.move-meta-entries"
+  | "build-step.normalize-codeblock"
+  | "build-step.profile"
+  | "build-step.topic-profile"
+  | "build-step.topicpull"
+  | "conserve-memory"
+  | "force-unique"
+  | "generate-debug-attributes"
+  | "onlytopic.in.map"
+  | "parallel"
+  | "remove-broken-links"
+  | "validate"
+  | "dita.preprocess.reloadstylesheet"
+  | "dita.preprocess.reloadstylesheet.clean-map"
+  | "dita.preprocess.reloadstylesheet.conref"
+  | "dita.preprocess.reloadstylesheet.lag-module"
+  | "dita.preprocess.reloadstylesheet.mapref"
+  | "dita.preprocess.reloadstylesheet.mappull"
+  | "dita.preprocess.reloadstylesheet.maplink"
+  | "dita.preprocess.reloadstylesheet.topicpull"
+  
+param-defs-enumerated |=
+  element param { attribute name { "args.figurelink.style" },   attribute value { "NUMBER" | "TITLE" | "NUMTITLE" } }
+  | element param { attribute name { "args.rellinks" },         attribute value { "none" | "all" | "noparent" | "nofamily" } }
+  | element param { attribute name { "args.tablelink.style" },  attribute value { "NUMBER" | "TITLE" | "NUMTITLE" } }
+  | element param { attribute name { "filter-stage" },          attribute value { "early" | "late" } }
+  | element param { attribute name { "generate.copy.outer" },   attribute value { "1" | "3" } }
+  | element param { attribute name { "link-crawl" },            attribute value { "map" | "topic" } }
+  | element param { attribute name { "outer.control" },         attribute value { "fail" | "warn" | "quiet" } }
+  | element param { attribute name { "processing-mode" },       attribute value { "strict" | "lax" | "skip" } }
+  | element param { attribute name { "store-type" },            attribute value { "file" | "memory" } }
+  
+param-names-enumerated |=
+  ## List of standard DITA-OT parameters with enumerated string values
+  "args.figurelink.style"
+  | "args.rellinks"
+  | "args.tablelink.style"
+  | "filter-stage"
+  | "generate.copy.outer"
+  | "link-crawl"
+  | "outer.control"
+  | "processing-mode"
+  | "store-type"
+  
+param-names-excluded |=
+  ## List of DITA-OT parameters that are not specified with the param element
+  "args.input" 
+  | "args.filter"
+  | "dita.input.valfile"
+  | "output.dir"
+  | "transtype"
+
+include "project-params-html.rnc"
+include "project-params-pdf.rnc"
+

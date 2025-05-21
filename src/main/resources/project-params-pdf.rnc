@@ -1,0 +1,38 @@
+default namespace = "https://www.dita-ot.org/project"
+
+param-names-path |= 
+  "args.fo.userconfig"
+  | "args.xsl.pdf"
+  | "axf.cmd"
+  | "axf.opt"
+  | "custom.xep.config"
+  | "customization.dir"
+  | "theme"
+  | "xep.dir"
+
+param-names-value |=
+  "maxJavaMemory"
+  | "outputFile.base"
+
+param-names-yes-no |=
+  "args.artlbl"
+  | "org.dita.index.skip"
+
+param-names-true-false |=
+  "org.dita.pdf2.chunk.enabled"
+  | "org.dita.pdf2.i18n.enabled"
+  
+param-defs-enumerated |=
+  element param { attribute name { "args.bookmap-order" },    attribute value { "retain" | "discard" } }
+  | element param { attribute name { "args.bookmark.style" }, attribute value { "EXPANDED" | "COLLAPSE" } }
+  | element param { attribute name { "args.chapter.layout" }, attribute value { "MINITOC" | "BASIC" } }
+  | element param { attribute name { "pdf.formatter" },       attribute value { "fop" | "ah" | "xep" } }
+
+param-names-enumerated |=
+  "args.bookmap-order"
+  | "args.bookmark.style"
+  | "args.chapter.layout"
+  | "pdf.formatter"
+  
+param-names-excluded |=
+  "publish.required.cleanup"

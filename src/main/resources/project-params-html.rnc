@@ -1,0 +1,52 @@
+default namespace = "https://www.dita-ot.org/project"
+
+param-names-path |= 
+  "args.cssroot"
+  | "args.ftr"
+  | "args.hdf"
+  | "args.hdr"
+  | "args.html5.toc.xsl"
+  | "args.xhtml.toc.xsl"
+  | "args.xsl"
+
+param-names-value |=
+  "args.css"
+  | "args.csspath"
+  | "args.dita.locale"
+  | "args.htmlhelp.includefile"
+  | "args.html5.contenttarget"
+  | "args.html5.toc"
+  | "args.html5.toc.class"
+  | "args.outext"
+  | "args.xhtml.contenttarget"
+  | "args.xhtml.toc"
+  | "args.xhtml.toc.class"
+  | "args.eclipse.provider"
+  | "args.eclipse.symbolic.name"
+  | "args.eclipse.version"
+  | "args.eclipsehelp.country"
+  | "args.eclipsehelp.jar.name"
+  | "args.eclipsehelp.language"
+
+
+param-names-yes-no |=
+  "args.copycss"
+  | "args.artlbl"
+  | "args.gen.default.meta"
+  | "args.indexshow"
+  | "args.xhtml.classattr"
+  | "html5.toc.generate"
+  
+
+param-names-true-false |=
+  "dita.html5.reloadstylesheet"
+  | "dita.xhtml.reloadstylesheet"
+  
+param-defs-enumerated |=
+  element param { attribute name { "nav-toc" },    attribute value { "none" | "partial" | "full" } }
+
+param-names-enumerated |=
+  "nav-toc"
+  
+param-names-excluded |=
+  "args.hide.parent.link"
